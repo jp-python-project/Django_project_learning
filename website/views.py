@@ -7,7 +7,6 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from Test_Meeting.models import Meeting
 
-
 def welcome(request):
     if request.user.is_authenticated:
         context={"meetings":Meeting.objects.all()}
