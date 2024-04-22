@@ -7,26 +7,19 @@
 <body>
 {% if user.is_authenticated %}
  <h3 style="float: right"> Logged in as: {{ user.get_username }}</h3>
-          <h1>Welcome to the Meeting Planner!</h1>
-        <h2>Meetings</h2>
-        <ul>
-            {% for meeting in meetings %}
-                <li>
-                    <a href="{% url 'details' meeting.id %}">
-                        {{ meeting.title }}
-                    </a>
-                </li>
-            {% endfor %}
-        </ul>
-           <a href="{% url 'rooms' %}">Rooms list</a><br><br>
+          <h1>Hi {{ user.first_name }} {{ user.last_name }}. Welcome to Jyoti Django App welcome page!</h1><br><br>
 
-           <a href="{% url 'new' %}">Create New Meeting</a><br><br>
+         <a href="{% url 'homes' %}"> ->Go to Meeting Page</a><br><br><br>
+
+
        <form method="post" action="{% url 'logout' %}">
            {% csrf_token %}
            <button type="submit">Logout</button>
        </form>
 
+
     {% endif %}
+
 
 
 </body>

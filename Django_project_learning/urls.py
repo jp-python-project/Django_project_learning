@@ -21,12 +21,13 @@ from django.contrib.auth import views as auth_views
 from userlogin.views import CustomLoginView
 from userlogin.forms import LoginForm
 from userlogin.views import ResetPasswordView
-from website.views import welcome
+from website.views import welcome,home
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('meetings/', include('Test_Meeting.urls')),
     path('welcome/', welcome, name='welcome'),
+    path('home/', home, name='homes'),
     path('SignUp/', RegisterView.as_view(), name='users-register'),
     path('', CustomLoginView.as_view(redirect_authenticated_user=True, template_name='users/login.html',
                                      authentication_form=LoginForm), name='login'),

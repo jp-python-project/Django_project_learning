@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>welcome</title>
+</head>
+<body>
+{% if user.is_authenticated %}
+ <h3 style="float: right"> Logged in as: {{ user.get_username }}</h3>
+        <h2>Meeting Details</h2>
+        <ul>
+            {% for meeting in meetings %}
+                <li>
+                    <a href="{% url 'details' meeting.id %}">
+                        {{ meeting.title }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+           <a href="{% url 'rooms' %}">Rooms Details</a><br><br>
+           <a href="{% url 'new' %}">Create New Meeting</a><br><br>
+       <form method="post" action="{% url 'welcome' %}">
+           {% csrf_token %}
+           <button type="submit">back to welcome</button>
+       </form>
+
+    {% endif %}
+
+</body>
+</html>
