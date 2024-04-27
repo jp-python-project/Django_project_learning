@@ -1,6 +1,26 @@
 {% extends "users/base1.html" %}
 {% block title %} Register Page {% endblock title%}
 {% block content %}
+    <style>
+    .fixed-element {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            padding: 10px;
+            color: blue;
+        }
+    .text-singup{
+            position: fixed;
+            top: 10px;
+            right: 60px;
+            padding: 10px;
+            color: black;
+        }
+    </style>
+    <div>
+      <p class="text-singup">Already have an account?</p>
+    <a  class="fixed-element" href="{% url 'login' %}">Sign In</a><br>
+    </div>
     <div class="form-content my-3 p-3">
         <div class="container">
             <div class="row justify-content-center">
@@ -69,7 +89,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group mt-4 mb-0">
-                                    <button type="submit" class="col-md-12 btn btn-dark">Sign Up</button><br><br>
+                                    <button type="submit" class="col-md-12 btn btn-dark" style="background: green">Sign Up</button><br><br>
                                 </div>
                             </form>
                         </div>
@@ -77,6 +97,10 @@
                             <div class="small">
                                 <a href="{% url 'login' %}">Have an account? Go to Sign in</a>
                             </div>
+                            
+                                <a href="https://www.facebook.com/"> Sign Up With Facebook</a>
+                                <a href="https://accounts.google.com/"> Sign Up With Google</a>
+                            
                         </div>
                     </div>
                 </div>
