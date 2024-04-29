@@ -17,8 +17,6 @@
                 </li>
             {% endfor %}
         </ul>
-           <a href="{% url 'rooms' %}">Rooms Details</a><br><br>
-           <a href="{% url 'new' %}">Create New Meeting</a><br><br>
        <form method="post" action="{% url 'welcome' %}">
            {% csrf_token %}
            <button type="submit">back to welcome</button>

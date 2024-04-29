@@ -1,6 +1,8 @@
 {% extends "users/base1.html" %}
 {% block title %} Login Page {% endblock title%}
+{% load static %}
 {% block content %}
+
 
  <style>
     .fixed-element {
@@ -17,19 +19,39 @@
             padding: 11px;
             color: black;
         }
+    .topright {
+   position: absolute;
+  top: 8px;
+  right: 80px;
+  font-size: 25px;
+    }
+
+
+
 </style>
     <div>
-    <p class="text-singup">New to SUMVAI?</p>
-    <a  class="fixed-element" href="{% url 'users-register' %}">Sign Up Free</a><br>
+
+        <p class="text-singup">New to SUMVAI?</p>
+        <a  class="fixed-element" href="{% url 'users-register' %}">Sign up Free</a><br>
+
 
     </div>
-    <div class="form-content my-3 p-3">
+
+      <div class="container">
+         <div class="row justify-content-bottom">
+             <div class="col-lg-3">
+                <img src="{% static 'meeting.png' %}" alt="Snow" width="504" height="236">
+             </div>
+         </div>
+      </div>
+    <div class="topright">
+    <div class="form-content my-4  p-4">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-5">
+            <div class="row justify-content-end">
+                <div class="col-lg-30">
                     <div class="card shadow-lg border-0 rounded-lg mt-0 mb-3">
-                        <div class="card-header justify-content-center">
-                          <h3 class="font-weight-light my-1 text-center">Login Page</h3>
+                        <div class="card-header justify-content-end">
+                          <h3 class="font-weight-light my-1 text-end">Login Page</h3>
                         </div>
                         {% if form.errors %}
                             <div class="alert alert-danger alert-dismissible" role="alert">
@@ -85,8 +107,8 @@
                                 <a href="{% url 'users-register' %}">Don't have an account yet? Go to signup</a><br>
                                 <a href="{% url 'password_reset' %}"><i>Forgot Password?</i></a>
                             </div>
-                           
-                            
+
+
 
                         </div>
                     </div>
@@ -94,4 +116,6 @@
             </div>
         </div>
      </div>
+    </div>
+
 {% endblock content %}
